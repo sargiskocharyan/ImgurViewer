@@ -175,6 +175,9 @@
                                     <outlet property="delegate" destination="U7n-8O-T5l" id="W70-va-arh"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="e7B-8X-3so">
+                                <rect key="frame" x="0.0" y="96" width="414" height="818"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -182,8 +185,12 @@
                             <constraint firstItem="9ZC-EV-dpD" firstAttribute="trailing" secondItem="ON9-aH-Bkj" secondAttribute="trailing" id="9ud-dC-ZvU"/>
                             <constraint firstItem="wiI-Tr-AWG" firstAttribute="centerX" secondItem="b8o-DX-RvK" secondAttribute="centerX" id="9wT-11-AqB"/>
                             <constraint firstItem="n2d-Mg-5gi" firstAttribute="leading" secondItem="9ZC-EV-dpD" secondAttribute="leading" constant="20" id="Gpz-89-gN6"/>
+                            <constraint firstItem="e7B-8X-3so" firstAttribute="centerY" secondItem="ON9-aH-Bkj" secondAttribute="centerY" id="JlZ-z5-0he"/>
+                            <constraint firstItem="e7B-8X-3so" firstAttribute="height" secondItem="9ZC-EV-dpD" secondAttribute="height" id="Lpi-aZ-Zg8"/>
+                            <constraint firstItem="e7B-8X-3so" firstAttribute="centerX" secondItem="ON9-aH-Bkj" secondAttribute="centerX" id="Oej-hl-6CL"/>
                             <constraint firstItem="ON9-aH-Bkj" firstAttribute="leading" secondItem="9ZC-EV-dpD" secondAttribute="leading" id="PZS-pV-Nmi"/>
                             <constraint firstItem="ON9-aH-Bkj" firstAttribute="top" secondItem="wiI-Tr-AWG" secondAttribute="bottom" id="eDN-tn-FLa"/>
+                            <constraint firstItem="e7B-8X-3so" firstAttribute="width" secondItem="9ZC-EV-dpD" secondAttribute="width" id="lkV-BF-KN6"/>
                             <constraint firstItem="n2d-Mg-5gi" firstAttribute="top" secondItem="9ZC-EV-dpD" secondAttribute="top" constant="18" id="ry8-BK-qBK"/>
                             <constraint firstItem="9ZC-EV-dpD" firstAttribute="bottom" secondItem="ON9-aH-Bkj" secondAttribute="bottom" id="wOY-4B-byq"/>
                             <constraint firstItem="9ZC-EV-dpD" firstAttribute="trailing" secondItem="n2d-Mg-5gi" secondAttribute="trailing" constant="20" id="zg8-k5-9fz"/>
@@ -192,6 +199,7 @@
                     </view>
                     <connections>
                         <outlet property="InfoLabel" destination="n2d-Mg-5gi" id="Uds-BT-gMR"/>
+                        <outlet property="spinner" destination="e7B-8X-3so" id="s2m-Jv-fOS"/>
                         <outlet property="tableView" destination="ON9-aH-Bkj" id="gmE-DT-zw5"/>
                     </connections>
                 </viewController>

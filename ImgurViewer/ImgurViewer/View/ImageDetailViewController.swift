@@ -10,6 +10,7 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
 
+    @IBOutlet var spinner: UIActivityIndicatorView!
     @IBOutlet var InfoLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
@@ -18,18 +19,25 @@ class ImageDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.InfoLabel.text = viewModel.model.title
+        self.spinner.startAnimating()
         viewModel.completion = { [weak self] (error) in
            guard let self = self else {return}
            DispatchQueue.main.async {
+               self.spinner.stopAnimating()
                if error == nil {
                    self.tableView.reloadData()
                } else {
-                   //self.showErrorAlert(error!)
+                   self.showErrorAlert(error!)
                }
            }
        }
     }
   
+    func showErrorAlert(_ error: Error) {
+        let alert = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ImageDetailViewController: UITableViewDataSource {
