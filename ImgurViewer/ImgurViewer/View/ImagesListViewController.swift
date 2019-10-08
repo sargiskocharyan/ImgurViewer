@@ -16,8 +16,8 @@ class ImagesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureCollectionView()
         
+        self.configureCollectionView()
         viewModel.completion = { [weak self] (error) in
             guard let self = self else {return}
             DispatchQueue.main.async {
@@ -49,7 +49,9 @@ class ImagesListViewController: UIViewController {
     }
     
     func showErrorAlert(_ error: Error) {
-        // TODO
+        let alert = UIAlertController(title: "Error occured", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
    
 }
